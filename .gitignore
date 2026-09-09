@@ -1,0 +1,6 @@
+web
+backend
+.next
+package-lock.json
+.env
+node_modules
