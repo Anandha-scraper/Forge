@@ -1,0 +1,14 @@
+{
+  "apphosting": {
+    "backendId": "forge-demo",
+    "rootDir": "frontend",
+    "ignore": [
+      "node_modules",
+      ".git",
+      ".next",
+      ".next-dev",
+      "firebase-debug.log",
+      "firebase-debug.*.log"
+    ]
+  }
+}
