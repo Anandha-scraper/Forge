@@ -1,0 +1,3 @@
+"use client";
+import { useEffect, useState } from "react";
+export default function CountUp({ value }) { const [shown,setShown]=useState("0"); useEffect(()=>{const numeric=Number(String(value).replace(/[^0-9.]/g,""));if(!numeric){setShown(value);return}let frame;const start=performance.now();const tick=now=>{const progress=Math.min((now-start)/700,1);const current=Math.round(numeric*(1-(1-progress)**3));setShown(String(value).replace(/[\d,.]+/,current.toLocaleString()));if(progress<1)frame=requestAnimationFrame(tick)};frame=requestAnimationFrame(tick);return()=>cancelAnimationFrame(frame)},[value]);return shown}

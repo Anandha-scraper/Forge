@@ -1,0 +1,1 @@
+.bracket-button{padding:10px 0;border:0;background:none;color:var(--orange);font-size:12px;font-weight:800;cursor:pointer}.bracket-button span:before{content:"[ ";}.bracket-button span:after{content:" ]";}

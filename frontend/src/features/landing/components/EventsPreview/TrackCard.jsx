@@ -1,0 +1,3 @@
+"use client";
+const icons = { Technical: "⌘", "Non-Technical": "✦", Hackathon: "⚑", Workshop: "⌁" };
+export default function TrackCard({ label, expanded, onClick, image, accent, tint }) { return <button type="button" className={`track-card${expanded ? " track-card--expanded" : ""}`} onClick={onClick} aria-expanded={expanded}><div className="track-header" style={{ "--track-tint": tint, "--track-accent": accent }}><span className="track-icon">{icons[label] || "✦"}</span><p>{label}</p></div><div className="track-card-art"><img src={image} alt={`${label} category artwork`} loading="lazy"/></div></button> }
