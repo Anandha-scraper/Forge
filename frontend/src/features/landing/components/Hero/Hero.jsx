@@ -2,7 +2,7 @@ import { Building2, CalendarDays, LogIn, MapPin, QrCode, Users } from "lucide-re
 import { landingContent } from "../../data/landing-content";
 import LogoLoop from "@/src/components/animation/LogoLoop";
 import ComicButton from "@/src/components/common/ComicButton";
-import "./hero.css";
+import "@/src/styles/pages/landing/hero.css";
 
 const stepIcons = [LogIn, CalendarDays, Users, QrCode];
 

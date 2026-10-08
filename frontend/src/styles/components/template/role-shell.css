@@ -1,0 +1,21 @@
+.template-role-shell{display:flex;min-height:100vh;min-height:100svh;background:var(--cream);color:var(--ink)}
+.template-sidebar{position:fixed;inset:0 auto 0 0;z-index:40;width:3.5rem;display:flex;flex-direction:column;background:var(--surface);border-right:1px solid var(--border);overflow-x:hidden;overflow-y:auto;transition:width .18s ease;box-shadow:var(--shadow-sm)}
+.template-role-main{flex:1;min-width:0;margin-left:3.5rem;padding:clamp(.85rem,1.8vw,1.4rem);transition:margin-left .18s ease}
+.template-sidebar__head{display:flex;align-items:center;gap:.5rem;min-height:3.75rem;padding:.65rem .55rem;border-bottom:1px solid var(--border)}
+.template-sidebar__toggle{display:none;flex:0 0 auto;align-items:center;justify-content:center;width:2.35rem;height:2.35rem;border:0;border-radius:var(--r-sm);background:transparent;color:var(--ink);cursor:pointer}
+.template-sidebar__toggle:hover{background:var(--surface-2)}
+.template-sidebar__brand{display:flex;align-items:center;gap:.6rem;min-width:0;text-decoration:none}
+.template-sidebar__logo{flex:0 0 auto;display:grid;place-items:center;width:2.25rem;height:2.25rem;border-radius:.65rem;background:var(--navy);color:#fff;font-size:.72rem;font-weight:900;letter-spacing:.05em}
+.template-sidebar__brand-copy,.template-sidebar__user-copy{display:flex;min-width:0;flex-direction:column;white-space:nowrap;line-height:1.18;opacity:0;transition:opacity .12s ease}
+.template-sidebar__brand-copy strong{font-family:Georgia,serif;font-size:.9rem}.template-sidebar__brand-copy small{color:var(--orange);font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.template-sidebar__nav{flex:1;display:flex;flex-direction:column;gap:.2rem;padding:.65rem .55rem}
+.template-sidebar__link{display:flex;align-items:center;gap:.78rem;height:2.65rem;padding:0 .72rem;border-radius:var(--r-sm);color:var(--ink-soft);text-decoration:none;white-space:nowrap}
+.template-sidebar__link svg{flex:0 0 auto}.template-sidebar__link:hover{background:var(--surface-2);color:var(--ink)}.template-sidebar__link[data-active]{background:var(--navy);color:#fff}
+.template-sidebar__label{opacity:0;transition:opacity .12s ease}
+.template-sidebar__foot{display:grid;gap:.35rem;padding:.55rem;border-top:1px solid var(--border)}
+.template-sidebar__user{display:flex;align-items:center;gap:.65rem;min-width:0;padding:.2rem .15rem}.template-sidebar__avatar{flex:0 0 auto;display:grid;place-items:center;width:2.25rem;height:2.25rem;border-radius:50%;background:var(--orange);color:#fff;font-size:.75rem;font-weight:900}
+.template-sidebar__user-copy strong,.template-sidebar__user-copy small{max-width:11rem;overflow:hidden;text-overflow:ellipsis}.template-sidebar__user-copy strong{font-size:.82rem}.template-sidebar__user-copy small{color:var(--ink-faint);font-size:.68rem}
+.template-sidebar__exit{font-size:.84rem}.template-sidebar__scrim{display:none}
+@media(hover:hover) and (pointer:fine){.template-sidebar:hover{width:15rem;box-shadow:var(--shadow-md)}.template-sidebar:hover .template-sidebar__label,.template-sidebar:hover .template-sidebar__brand-copy,.template-sidebar:hover .template-sidebar__user-copy{opacity:1}.template-role-shell:has(.template-sidebar:hover) .template-role-main{margin-left:15rem}}
+@media(max-width:768px){.template-sidebar{width:3.85rem}.template-role-main{margin-left:3.85rem;padding:1rem .75rem 2rem}.template-sidebar__toggle{display:inline-flex}.template-sidebar__logo{display:none}.template-sidebar[data-open]{width:min(82vw,16rem);box-shadow:var(--shadow-lg)}.template-sidebar[data-open] .template-sidebar__label,.template-sidebar[data-open] .template-sidebar__brand-copy,.template-sidebar[data-open] .template-sidebar__user-copy{opacity:1}.template-sidebar[data-open] .template-sidebar__logo{display:grid}.template-sidebar__scrim{display:block;position:fixed;inset:0;z-index:30;border:0;background:rgba(17,34,78,.42);opacity:0;pointer-events:none}.template-sidebar[data-open]+.template-sidebar__scrim{opacity:1;pointer-events:auto}}
+@media(max-width:420px){.template-sidebar{width:3.5rem}.template-role-main{margin-left:3.5rem;padding:.75rem .55rem 1.5rem}}
