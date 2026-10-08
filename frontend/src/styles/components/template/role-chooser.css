@@ -1,0 +1,14 @@
+.role-chooser-backdrop{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:1.25rem;background:rgba(7,15,38,.72);backdrop-filter:blur(8px)}
+.role-chooser{position:relative;width:min(43rem,100%);border:3px solid var(--navy);border-radius:1.25rem;background:var(--cream);color:var(--navy);padding:clamp(1.5rem,4vw,2.5rem);box-shadow:.65rem .65rem 0 var(--navy)}
+.role-chooser__close{position:absolute;top:.75rem;right:.9rem;width:2.25rem;height:2.25rem;border:0;background:transparent;color:var(--navy);font-size:1.75rem;line-height:1;cursor:pointer}
+.role-chooser__eyebrow{margin:0 0 .55rem;color:var(--orange);font-size:.72rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+.role-chooser h2{max-width:34rem;margin:0;font-family:Georgia,serif;font-size:clamp(1.65rem,4vw,2.4rem);line-height:1.08}
+.role-chooser__intro{max-width:35rem;margin:.8rem 0 1.5rem;color:var(--muted);line-height:1.6}
+.role-chooser__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+.role-choice{display:flex;min-width:0;flex-direction:column;gap:.65rem;border:2px solid var(--navy);border-radius:.85rem;background:#fff;padding:1.25rem;text-decoration:none;box-shadow:.3rem .3rem 0 var(--navy);transition:transform .18s ease,box-shadow .18s ease}
+.role-choice:hover{transform:translate(-2px,-2px);box-shadow:.45rem .45rem 0 var(--navy)}
+.role-choice--participant{background:#edf1dc}.role-choice--admin{background:#ffe3cb}
+.role-choice__icon{display:grid;place-items:center;width:2.65rem;height:2.65rem;border:2px solid var(--navy);border-radius:.55rem;background:var(--navy);color:#fff}
+.role-choice strong{font-family:Georgia,serif;font-size:1.2rem}.role-choice small{min-height:3.1rem;color:var(--muted);font-size:.84rem;line-height:1.5}
+.role-choice__action{display:flex;align-items:center;gap:.4rem;color:var(--navy);font-size:.76rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase}
+@media(max-width:560px){.role-chooser{padding:1.4rem 1.15rem 1.2rem;box-shadow:.4rem .4rem 0 var(--navy)}.role-chooser__grid{grid-template-columns:1fr}.role-choice small{min-height:0}.role-chooser__intro{font-size:.9rem}}

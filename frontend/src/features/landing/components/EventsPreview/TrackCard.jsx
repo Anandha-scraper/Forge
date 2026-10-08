@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useState } from "react";
 import { CalendarDays, Clock, MapPin, Users, Wallet } from "lucide-react";
-import "./event-poster.css";
+import "@/src/styles/pages/landing/event-poster.css";
 const icons = { Technical: "⌘", "Non-Technical": "✦", Hackathon: "⚑", Workshop: "⌁" };
 const dateText = date => date ? new Intl.DateTimeFormat("en", { day: "numeric", month: "short", year: "numeric" }).format(new Date(`${date}T00:00:00`)) : "Date TBA";
 
