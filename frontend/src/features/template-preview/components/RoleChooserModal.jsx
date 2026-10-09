@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight, LayoutDashboard, Ticket } from "lucide-react";
 import { templateContent } from "../data/template-content";
 import "@/src/styles/components/template/role-chooser.css";
+import "@/src/styles/components/template/role-chooser-register.css";
 
 const icons = { admin: LayoutDashboard, participant: Ticket };
 
@@ -61,6 +62,9 @@ export default function RoleChooserModal({ onClose }) {
             );
           })}
         </div>
+        <button type="button" className="role-chooser__register" disabled>
+          {copy.registerButtonLabel}
+        </button>
       </section>
     </div>
   );

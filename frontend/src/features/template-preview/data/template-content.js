@@ -12,6 +12,7 @@ export const templateContent = {
     eyebrow: "YOUR ORGANISATION template",
     title: "Which side would you like to explore?",
     description: "Everything here uses mock data, so you can safely click around and see how the finished platform feels.",
+    registerButtonLabel: "Register For Your Event",
     roles: [
       { key: "admin", title: "Explore as Admin", description: "See registrations, payments, events and operational insights.", href: "/template/admin" },
       { key: "participant", title: "Explore as Participant", description: "Browse events, registrations, passes and your personal schedule.", href: "/template/participant" },
