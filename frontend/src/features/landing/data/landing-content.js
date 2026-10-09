@@ -1,6 +1,6 @@
 export const landingContent = {
   brand: { name: "YOUR ORGANISATION", shortName: "ORG" },
-  event: { name: "YOUR EVENT", year: "20XX", type: "TECHNICAL SYMPOSIUM", tagline: "Think · Build · Compete · Celebrate.", description: "A flexible event platform for organisations building memorable experiences, managing registrations and bringing every participant into one place.", dates: "EVENT DATE", location: "EVENT LOCATION", department: "YOUR DEPARTMENT" },
+  event: { name: "YOUR EVENT", year: "20XX", type: "YOUR EVENT TYPE", tagline: "Think · Build · Compete · Celebrate.", description: "A flexible event platform for organisations building memorable experiences, managing registrations and bringing every participant into one place.", dates: "EVENT DATE", location: "EVENT LOCATION", department: "YOUR DEPARTMENT" },
   navigation: [{ label: "Home", href: "#top" }, { label: "Events", href: "#events" }, { label: "Schedule", href: "#schedule" }, { label: "Contact", href: "#contact" }],
   nav: [{ label: "Home", href: "#top" }, { label: "Events", href: "#events" }, { label: "Schedule", href: "#schedule" }, { label: "Contact", href: "#contact" }],
   wordmarks: ["YOUR EVENT", "WORKSHOP", "HACKATHON", "PRESENTATION", "QUIZ", "CODE SPRINT", "TREASURE HUNT", "YOUR EVENT"],
@@ -13,9 +13,55 @@ export const landingContent = {
   productPreview: { organisation: "YOUR EVENT PLATFORM", status: "LIVE", registrations: "2,481", revenue: "₹4.82L", events: "18", completion: "78%" },
   eventCategories: ["Technical", "Non-Technical", "Hackathon", "Workshop"],
   trackMeta: [{ image: "/events/technical.svg", accent: "#E14E1D", tint: "#f4dbda" }, { image: "/events/non-technical.svg", accent: "#10b981", tint: "#dcf5e7" }, { image: "/events/hackathon.svg", accent: "#6366f1", tint: "#e6e8fd" }, { image: "/events/workshop.svg", accent: "#f59e0b", tint: "#fef3d9" }],
-  events: [{ id: "event-1", category: "Technical", name: "YOUR TECHNICAL EVENT", date: "2026-09-25", start_time: "09:00", end_time: "10:30", fee: 0, is_team_event: false, team_min: 1, team_max: 1, venue_name: "YOUR VENUE", instructions: "Add the event objective, eligibility, rules and submission instructions here." }, { id: "event-2", category: "Non-Technical", name: "YOUR NON-TECH EVENT", date: "2026-09-25", start_time: "11:00", end_time: "12:30", fee: 0, is_team_event: false, team_min: 1, team_max: 1, venue_name: "YOUR VENUE", instructions: "Add the event objective, eligibility, rules and submission instructions here." }, { id: "event-3", category: "Hackathon", name: "YOUR HACKATHON", date: "2026-09-26", start_time: "09:00", end_time: "17:00", fee: 0, is_team_event: true, team_min: 2, team_max: 4, venue_name: "YOUR VENUE", instructions: "Add the problem statement, team rules and judging process here." }, { id: "event-4", category: "Workshop", name: "YOUR WORKSHOP", date: "2026-09-26", start_time: "10:00", end_time: "12:00", fee: 0, is_team_event: false, team_min: 1, team_max: 1, venue_name: "YOUR VENUE", instructions: "Add materials, prerequisites and workshop outcomes here." }],
+  events: [{ id: "technical-1", category: "Technical", name: "YOUR CODE CHALLENGE", date: "2026-09-25", start_time: "09:00", end_time: "10:30", fee: 0, is_team_event: false, team_min: 1, team_max: 1, venue_name: "YOUR VENUE", description: "A focused programming round for individual problem-solvers.", instructions: "Add eligibility, language rules and submission instructions here." }, { id: "technical-2", category: "Technical", name: "YOUR BUILD SPRINT", date: "2026-09-25", start_time: "14:00", end_time: "16:00", fee: 0, is_team_event: true, team_min: 2, team_max: 3, venue_name: "YOUR VENUE", description: "A short team build challenge with a clear product brief.", instructions: "Add team rules, tools allowed and judging criteria here." }, { id: "non-technical-1", category: "Non-Technical", name: "YOUR DESIGN RELAY", date: "2026-09-25", start_time: "11:00", end_time: "12:30", fee: 0, is_team_event: false, team_min: 1, team_max: 1, venue_name: "YOUR VENUE", description: "A fast creative challenge for ideas, storytelling and presentation.", instructions: "Add prompt details, materials and final submission rules here." }, { id: "non-technical-2", category: "Non-Technical", name: "YOUR QUIZ ARENA", date: "2026-09-25", start_time: "15:00", end_time: "16:30", fee: 0, is_team_event: true, team_min: 2, team_max: 2, venue_name: "YOUR VENUE", description: "A team quiz round across culture, science and current affairs.", instructions: "Add round format, scoring rules and eligibility here." }, { id: "hackathon-1", category: "Hackathon", name: "YOUR OPEN HACKATHON", date: "2026-09-26", start_time: "09:00", end_time: "17:00", fee: 0, is_team_event: true, team_min: 2, team_max: 4, venue_name: "YOUR VENUE", description: "A full-day prototype challenge for teams with a shared problem statement.", instructions: "Add the problem statement, team rules and judging process here." }, { id: "hackathon-2", category: "Hackathon", name: "YOUR IDEATION JAM", date: "2026-09-26", start_time: "10:00", end_time: "13:00", fee: 0, is_team_event: true, team_min: 2, team_max: 5, venue_name: "YOUR VENUE", description: "A compact ideation challenge where teams present an executable concept.", instructions: "Add pitch timing, deliverables and mentor rules here." }, { id: "workshop-1", category: "Workshop", name: "YOUR PRODUCT WORKSHOP", date: "2026-09-26", start_time: "10:00", end_time: "12:00", fee: 0, is_team_event: false, team_min: 1, team_max: 1, venue_name: "YOUR VENUE", description: "A hands-on session that guides participants from brief to outcome.", instructions: "Add materials, prerequisites and workshop outcomes here." }, { id: "workshop-2", category: "Workshop", name: "YOUR CREATOR LAB", date: "2026-09-26", start_time: "14:00", end_time: "16:00", fee: 0, is_team_event: false, team_min: 1, team_max: 1, venue_name: "YOUR VENUE", description: "A practical lab for trying a new tool or workflow with guidance.", instructions: "Add device requirements, tools and participation instructions here." }],
   schedule: [],
-  eventNotice: [{ title: "Before you register", text: "Add your organisation's registration instructions here." }],
+  eventNotice: [
+    {
+      title: "Eligibility",
+      text: "Confirm participant eligibility and any required identity card or organisation details.",
+    },
+    {
+      title: "Team entries",
+      text: "Check the allowed team size, nominate a team lead, and invite members before submitting.",
+    },
+    {
+      title: "Confirmation",
+      text: "Complete the listed payment or approval step to receive your confirmed registration pass.",
+    },
+  ],
   actions: { footerLabel: "Explore template", eyebrow: "Event interest", title: "Tell us about your event.", description: "This template will connect visitors to your registration or enquiry flow.", organisationPlaceholder: "Organisation name", emailPlaceholder: "Email address", submitLabel: "Register interest", successTitle: "Interest recorded.", successDescription: "Your organisation can replace this local confirmation with its own flow." },
   contact: { organisation: "Forge Events", department: "Event Platform Team", location: "Innovation Centre · Bengaluru", mapUrl: "#contact", coordinators: [{ name: "Dr. Ananya Rao", phone: "+91 98765 43210" }, { name: "Riya Menon", phone: "+91 91234 56789" }, { name: "Arjun Mehta", phone: "+91 90123 45678" }] }
 };
+
+landingContent.events.push(
+  {
+    id: "technical-3",
+    category: "Technical",
+    name: "YOUR DEBUG ARENA",
+    date: "2026-09-25",
+    start_time: "11:30",
+    end_time: "12:30",
+    fee: 0,
+    is_team_event: false,
+    team_min: 1,
+    team_max: 1,
+    venue_name: "YOUR VENUE",
+    description: "A timed debugging round for identifying, tracing and fixing issues in a focused codebase.",
+    instructions: "Add supported languages, scoring rules and submission requirements here.",
+  },
+  {
+    id: "technical-4",
+    category: "Technical",
+    name: "YOUR DATA QUEST",
+    date: "2026-09-25",
+    start_time: "16:30",
+    end_time: "17:30",
+    fee: 0,
+    is_team_event: true,
+    team_min: 2,
+    team_max: 4,
+    venue_name: "YOUR VENUE",
+    description: "A team problem-solving sprint built around data, logic and practical decision-making.",
+    instructions: "Add dataset access, permitted tools and evaluation criteria here.",
+  },
+);

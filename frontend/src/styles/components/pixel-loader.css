@@ -1,0 +1,78 @@
+.pixel-loader {
+  display: grid;
+  width: 100%;
+  min-height: clamp(9rem, 22vw, 14rem);
+  place-items: center;
+  gap: .5rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.pixel-loader--page { min-height: min(60svh, 36rem); }
+.pixel-loader--panel { min-height: clamp(9rem, 22vw, 14rem); }
+.pixel-loader--compact { min-height: 7rem; padding: .75rem; }
+
+/* Exact geometry from the supplied pixel loader; only IDs were made reusable classes. */
+.pixel-loader__scene { position: relative; width: 140px; height: 160px; }
+.pixel-loader__ghost {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  display: grid;
+  scale: .8;
+  grid-template-columns: repeat(14, 1fr);
+  grid-template-rows: repeat(14, 1fr);
+  grid-template-areas:
+    "a1 a2 a3 a4 a5 top0 top0 top0 top0 a10 a11 a12 a13 a14"
+    "b1 b2 b3 top1 top1 top1 top1 top1 top1 top1 top1 b12 b13 b14"
+    "c1 c2 top2 top2 top2 top2 top2 top2 top2 top2 top2 top2 c13 c14"
+    "d1 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 d14"
+    "e1 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 e14"
+    "f1 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 f14"
+    "top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4"
+    "top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4"
+    "top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4"
+    "top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4"
+    "top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4"
+    "top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4"
+    "st0 st0 an4 st1 an7 st2 an10 an10 st3 an13 st4 an16 st5 st5"
+    "an1 an2 an3 an5 an6 an8 an9 an9 an11 an12 an14 an15 an17 an18";
+  animation: pixel-loader-up-down infinite .5s;
+}
+
+.pixel-loader__block { background-color: red; }
+.pixel-loader__block--top0 { grid-area: top0; }.pixel-loader__block--top1 { grid-area: top1; }.pixel-loader__block--top2 { grid-area: top2; }.pixel-loader__block--top3 { grid-area: top3; }.pixel-loader__block--top4 { grid-area: top4; }
+.pixel-loader__block--st0 { grid-area: st0; }.pixel-loader__block--st1 { grid-area: st1; }.pixel-loader__block--st2 { grid-area: st2; }.pixel-loader__block--st3 { grid-area: st3; }.pixel-loader__block--st4 { grid-area: st4; }.pixel-loader__block--st5 { grid-area: st5; }
+
+.pixel-loader__eye { position: absolute; top: 30px; width: 40px; height: 50px; }
+.pixel-loader__eye::before { position: absolute; display: block; width: 20px; height: 50px; content: ""; background-color: white; transform: translateX(10px); }
+.pixel-loader__eye::after { position: absolute; display: block; width: 40px; height: 30px; content: ""; background-color: white; transform: translateY(10px); }
+.pixel-loader__eye--left { left: 10px; }.pixel-loader__eye--right { right: 30px; }
+
+.pixel-loader__pupil { position: absolute; top: 50px; z-index: 1; width: 20px; height: 20px; background-color: blue; animation: pixel-loader-eyes infinite 3s; }
+.pixel-loader__pupil--left { left: 10px; }.pixel-loader__pupil--right { right: 50px; }
+
+.pixel-loader__pixel { background-color: red; animation: pixel-loader-flicker-zero infinite .5s; }
+.pixel-loader__pixel--1 { grid-area: an1; }.pixel-loader__pixel--18 { grid-area: an18; }
+.pixel-loader__pixel--2 { grid-area: an2; animation-name: pixel-loader-flicker-one; }.pixel-loader__pixel--17 { grid-area: an17; animation-name: pixel-loader-flicker-one; }
+.pixel-loader__pixel--3 { grid-area: an3; animation-name: pixel-loader-flicker-one; }.pixel-loader__pixel--16 { grid-area: an16; animation-name: pixel-loader-flicker-one; }
+.pixel-loader__pixel--4 { grid-area: an4; animation-name: pixel-loader-flicker-one; }.pixel-loader__pixel--15 { grid-area: an15; animation-name: pixel-loader-flicker-one; }
+.pixel-loader__pixel--6 { grid-area: an6; }.pixel-loader__pixel--12 { grid-area: an12; }
+.pixel-loader__pixel--7 { grid-area: an7; }.pixel-loader__pixel--13 { grid-area: an13; }
+.pixel-loader__pixel--9 { grid-area: an9; animation-name: pixel-loader-flicker-one; }.pixel-loader__pixel--10 { grid-area: an10; animation-name: pixel-loader-flicker-one; }
+.pixel-loader__pixel--8 { grid-area: an8; }.pixel-loader__pixel--11 { grid-area: an11; }
+.pixel-loader__pixel--5 { grid-area: an5; animation-name: pixel-loader-flicker-one; }.pixel-loader__pixel--14 { grid-area: an14; animation-name: pixel-loader-flicker-one; }
+
+.pixel-loader__shadow { position: absolute; top: 80%; width: 140px; height: 140px; border-radius: 50%; background-color: black; filter: blur(20px); opacity: .5; transform: rotateX(80deg); animation: pixel-loader-shadow infinite .5s; }
+.pixel-loader__label { color: #687486; font-size: .75rem; font-weight: 700; }
+.pixel-loader__sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+
+@keyframes pixel-loader-up-down { 0%, 49% { transform: translateY(0); } 50%, 100% { transform: translateY(-10px); } }
+@keyframes pixel-loader-eyes { 0%, 49% { transform: translateX(0); } 50%, 99% { transform: translateX(10px); } 100% { transform: translateX(0); } }
+@keyframes pixel-loader-flicker-zero { 0%, 49% { background-color: red; } 50%, 100% { background-color: transparent; } }
+@keyframes pixel-loader-flicker-one { 0%, 49% { background-color: transparent; } 50%, 100% { background-color: red; } }
+@keyframes pixel-loader-shadow { 0%, 49% { opacity: .5; } 50%, 100% { opacity: .2; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .pixel-loader__ghost, .pixel-loader__pupil, .pixel-loader__pixel, .pixel-loader__shadow { animation: none; }
+}

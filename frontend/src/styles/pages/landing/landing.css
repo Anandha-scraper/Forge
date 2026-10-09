@@ -1,2 +1,23 @@
-.section-frame{padding:105px max(22px,calc((100% - 1160px)/2))}.site-shell{min-height:100vh;background:var(--navy);color:var(--white);overflow:hidden}.modal-backdrop{position:fixed;z-index:50;inset:0;display:grid;place-items:center;padding:20px;background:#030816aa;backdrop-filter:blur(8px)}.request-modal{position:relative;width:min(470px,100%);padding:36px;border:1px solid #ffffff24;border-radius:18px;background:#111f45;box-shadow:0 25px 100px #00000080}.request-modal h2{margin:10px 0;font-size:31px;line-height:1;letter-spacing:-.06em}.request-modal>p:not(.eyebrow){color:var(--muted);font-size:14px;line-height:1.5}.modal-close{position:absolute;top:14px;right:16px;border:0;background:none;color:#8290aa;font-size:26px;cursor:pointer}.request-modal form{display:grid;gap:10px;margin-top:25px}.request-modal input{padding:14px 13px;border:1px solid #ffffff20;border-radius:8px;outline:0;background:#091432;color:var(--white)}.request-modal input:focus{border-color:var(--lime)}.success-mark{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--lime);color:var(--navy);font-weight:900}.request-modal .button{margin-top:5px}
-.section-frame{padding:105px max(22px,calc((100% - 1160px)/2))}.site-shell{min-height:100vh;background:var(--cream);color:var(--navy);overflow:hidden}.workflow{background:var(--navy-2)}.features{background:#eef0e9}.infra{background:#f7f7f3}.preview{background:var(--navy)}.footer{background:var(--navy)}.section-intro h2{color:inherit}.trusted{background:#f7f7f3}.request-modal{background:var(--cream);border:1px solid #11224e22;color:var(--navy)}.request-modal>p:not(.eyebrow){color:#687184}.request-modal input{border-color:#11224e22;background:white;color:var(--navy)}
+.site-shell {
+  --landing-gutter: clamp(1rem, 1.25vw, 1.5rem);
+  --landing-section-space: clamp(3.5rem, 7vw, 6.25rem);
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--cream);
+  color: var(--navy);
+}
+
+.template-section {
+  padding-block: var(--landing-section-space);
+  scroll-margin-top: 6.25rem;
+}
+
+.section-frame {
+  padding: clamp(4rem, 8vw, 6.5625rem) max(var(--landing-gutter), calc((100% - 72.5rem) / 2));
+}
+
+.workflow { background: var(--navy-2); }
+.features { background: #eef0e9; }
+.infra, .trusted { background: #f7f7f3; }
+.preview, .footer { background: var(--navy); }
+.section-intro h2 { color: inherit; }

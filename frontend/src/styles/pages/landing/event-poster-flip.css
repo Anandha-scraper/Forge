@@ -1,0 +1,25 @@
+.doodlepro__flip {
+  display: grid;
+  perspective: 75rem;
+  transform: rotate(-1.2deg);
+  transform-style: preserve-3d;
+}
+
+.doodlepro__flip .doodlepro__poster {
+  grid-area: 1 / 1;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100%;
+  backface-visibility: hidden;
+  transition: transform .55s cubic-bezier(.2, .75, .25, 1), opacity .2s ease;
+  will-change: transform;
+}
+
+.doodlepro__poster--front { transform: rotateY(0deg); }
+.doodlepro__poster--back { transform: rotateY(-180deg); }
+.doodlepro.is-flipped .doodlepro__poster--front { transform: rotateY(180deg); }
+.doodlepro.is-flipped .doodlepro__poster--back { transform: rotateY(0deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  .doodlepro__flip .doodlepro__poster { transition: none; }
+}

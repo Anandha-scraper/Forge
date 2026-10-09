@@ -1,12 +1,19 @@
 "use client";
 
-import { createContext, useContext, useMemo, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 import { cloneTemplateState, templateContent } from "../data/template-content";
 
 const TemplatePreviewContext = createContext(null);
+const PREVIEW_MIN_LOADING_MS = 1500;
 
 export function TemplatePreviewProvider({ children }) {
   const [demo, setDemo] = useState(cloneTemplateState);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setIsLoading(false), PREVIEW_MIN_LOADING_MS);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   const actions = useMemo(() => ({
     resetDemo: () => setDemo(cloneTemplateState()),
@@ -54,7 +61,7 @@ export function TemplatePreviewProvider({ children }) {
     },
   }), []);
 
-  const value = useMemo(() => ({ ...demo, ...actions }), [demo, actions]);
+  const value = useMemo(() => ({ ...demo, ...actions, isLoading }), [demo, actions, isLoading]);
   return <TemplatePreviewContext.Provider value={value}>{children}</TemplatePreviewContext.Provider>;
 }
 
