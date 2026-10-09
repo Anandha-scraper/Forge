@@ -88,19 +88,32 @@
 .event-notice__head { display: flex; align-items: center; gap: .5rem; margin-bottom: .88rem; color: var(--navy); }
 .event-notice__head svg { flex: none; color: var(--orange); }
 .event-notice__head h3 { margin: 0; font-size: .82rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-.event-notice__grid { display: flex; flex-wrap: wrap; gap: .88rem; }
+.event-notice__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
 
 .notice-card {
   position: relative;
   box-sizing: border-box;
-  flex: 0 1 auto;
-  width: fit-content;
-  max-width: min(100%, 46rem);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   overflow: hidden;
   padding: .88rem 1.12rem .88rem 1.88rem;
   border: 1px solid #11224e20;
   border-radius: 12px;
   background: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.notice-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .notice-card::before {
@@ -123,6 +136,12 @@
   .events-lineup--selected .track-card { max-width: min(100%, 34rem); }
 }
 
+@media (max-width: 900px) {
+  .event-notice__grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
 @media (max-width: 720px) {
   .events-poster-grid { grid-template-columns: 1fr; }
   .events-poster-grid > .doodlepro { max-width: 42rem; }
@@ -136,5 +155,6 @@
   .events-top .bracket-button { font-size: .82rem; }
   .events-lineup { grid-template-columns: 1fr; gap: 1.25rem; }
   .track-card-art { height: 14.7rem; }
+  .event-notice__grid { grid-template-columns: 1fr; }
   .notice-card { width: 100%; max-width: 100%; }
 }
